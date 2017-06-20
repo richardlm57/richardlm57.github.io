@@ -3,11 +3,12 @@ function calculate(){
 	var startDate = new Date($("#startDate").val());
 	var endDate = new Date();
 	endDate.setTime(startDate.getTime() + days * 86400000 );
-	$(function() {
-        $("#output").datepicker({
-		    startDate: startDate,
-		    endDate: endDate, 
-		    autoclose: true
-		});
-    });
+	console.log(startDate)
+	console.log(endDate)
+	$("#output").datepicker({
+	    minDate: startDate,
+	    maxDate: endDate
+	});
+	$.datepicker.setDefaults( $.datepicker.regional[ $("#countryCode").val() ] );
+
 }
